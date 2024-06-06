@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-server",
+  "version": "1.0.0",
+  "description": "Simple Express Server for Vodafone Devops Bootcamp Final Task",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+
+    "test": "mocha"
+  },
+  "author": "Firat Dede",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "mocha": "^10.4.0",
+    "supertest": "^7.0.0"
+  }
+}
