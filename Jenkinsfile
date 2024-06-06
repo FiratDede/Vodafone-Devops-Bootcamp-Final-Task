@@ -12,8 +12,9 @@ pipeline {
         stage('Test') {
             steps{
                 dir('nodejs-server'){
-                    sh "npm install"
-                    sh "npm run test"
+                    sh "docker build -t nodejs-server-test --target test ."
+                    sh "docker rmi nodejs-server-test"
+
                 }   
              }
          }
@@ -21,7 +22,7 @@ pipeline {
             steps{
                 dir('nodejs-server'){
                 
-                    sh "docker build -t nodejs-server ."
+                    sh "docker build -t nodejs-server --target prod ."
 
                 }   
                

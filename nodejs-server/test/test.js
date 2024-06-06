@@ -2,7 +2,7 @@ const request = require('supertest');
 const chai = require('chai');
 const app = require('../app');
 
-let server;
+/* let server;
 
 before((done) => {
   server = app.listen(3000, () => {
@@ -13,7 +13,10 @@ before((done) => {
 
 after((done) => {
   server.close(done)
-});
+}); */
+
+
+
 
 const expect = chai.expect;
 
