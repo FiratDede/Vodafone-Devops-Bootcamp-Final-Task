@@ -1,14 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Change Minikube Docker Env'){
-            steps{
-                  script {
-                    // Minikube environment variables dosyasını kaynak gösterin
-                    sh 'eval $(minikube docker-env)'
-                }
-            }
-        }
+       
         
         stage('Test') {
             steps{
@@ -23,6 +16,8 @@ pipeline {
             steps{
                 dir('nodejs-server'){
                     sh "docker build -t nodejs-server --target prod ."
+
+                    sh "minikube image load nodejs-server"
                 }   
                
              }
