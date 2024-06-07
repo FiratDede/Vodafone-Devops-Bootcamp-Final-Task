@@ -1,15 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Change Minikube Docker Env'){
-            steps{
-                  script {
-                   sh "minikube docker-env"
-                    // Çıktıyı değerlendir
-                  
-                }
-            }
-        }
+   
         
         stage('Test') {
             steps{
@@ -23,19 +15,19 @@ pipeline {
         stage('Build') {
             steps{
                 dir('nodejs-server'){
-                    sh "docker build -t nodejs-server --target prod ."
-
-                    sh "minikube image load nodejs-server"
-                }   
-               
-             }
-         }
+                    sh "docker build -t firatdede/nodejs-server:latest --target prod ."
+                }  
+                withDockerRegistry(credentialsId: 'docker_hub_credentials', url: 'https://index.docker.io/v1/') {
+                    sh "docker push firatdede/nodejs-server:latest" 
+                  }
+            }
+        }
         stage('Deploy') {
             steps{
                 dir('nodejs-server'){
                     sh "kubectl apply -f nodejs-server-deployment-service.yaml"
                 }   
              }
-         }
+        }
     }
 }

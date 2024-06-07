@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: nodejs-server
-        image: nodejs-server:latest
-        imagePullPolicy: Never
+        image: firatdede/nodejs-server
         ports:
         - containerPort: 3000
 ---
