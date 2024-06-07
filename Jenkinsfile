@@ -4,8 +4,9 @@ pipeline {
         stage('Change Minikube Docker Env'){
             steps{
                   script {
-                    // Minikube environment variables dosyasını kaynak gösterin
-                    sh 'minikube'
+                    def dockerEnv = sh(script: 'minikube docker-env', returnStdout: true).trim()
+                    // Çıktıyı değerlendir
+                    sh "${dockerEnv}"
                 }
             }
         }
