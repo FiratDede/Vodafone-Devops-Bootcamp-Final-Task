@@ -1,7 +1,14 @@
 pipeline {
     agent any
     stages {
-       
+        stage('Change Minikube Docker Env'){
+            steps{
+                  script {
+                    // Minikube environment variables dosyasını kaynak gösterin
+                    sh 'minikube status'
+                }
+            }
+        }
         
         stage('Test') {
             steps{
