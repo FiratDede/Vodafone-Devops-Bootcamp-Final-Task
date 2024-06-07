@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Change Minikube Docker Env'){
             steps{
-                    sh "minikube docker-env | sh"
+                  script {
+                    // Minikube environment variables dosyasını kaynak gösterin
+                    sh 'eval $(minikube docker-env)'
+                }
             }
         }
         
