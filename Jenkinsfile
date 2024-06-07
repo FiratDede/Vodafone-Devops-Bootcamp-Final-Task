@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Change Minikube Docker Env'){
+            steps{
+                    sh "minikube docker-env | bash"
+            }
+        }
         
         stage('Test') {
             steps{
