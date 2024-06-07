@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Change Minikube Docker Env'){
             steps{
-                    sh "minikube docker-env | bash"
+                    sh "minikube docker-env | sh"
             }
         }
         
