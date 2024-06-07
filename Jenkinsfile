@@ -5,7 +5,7 @@ pipeline {
             steps{
                   script {
                     // Minikube environment variables dosyasını kaynak gösterin
-                    sh 'minikube status'
+                    sh 'minikube docker-env'
                 }
             }
         }
