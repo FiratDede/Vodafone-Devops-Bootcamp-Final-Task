@@ -6,9 +6,8 @@ pipeline {
                   script {
                     def dockerEnv = sh(script: 'minikube docker-env', returnStdout: true).trim()
                     // Çıktıyı değerlendir
-                    sh "minikube ssh"
+                    sh "echo ${dockerEnv}"
                     sh "${dockerEnv}"
-                    sh "exit"
                 }
             }
         }
