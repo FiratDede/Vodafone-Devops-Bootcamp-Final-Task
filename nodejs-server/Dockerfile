@@ -9,10 +9,12 @@ RUN npm install
  
 COPY . .
 
-FROM base as prod
+RUN npm run test
+
+# FROM base as prod
 
 CMD [ "node", "app.js" ]
 
-FROM base as test
+# FROM base as test
 
-RUN npm run test
+# RUN npm run test

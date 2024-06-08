@@ -5,13 +5,13 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-
     "test": "mocha --exit"
   },
   "author": "Firat Dede",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-prometheus-middleware": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^4.4.1",
