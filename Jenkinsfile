@@ -4,9 +4,9 @@ pipeline {
         stage('Test And Build') {
             steps{
                 dir('nodejs-server'){
+                    // Test operation done in Dockerfile while building docker image. Check Dockerfile
                     sh "docker build -t firatdede/nodejs-server:latest ."
                 }  
-               
             }
         }
         stage('Push Image') {
