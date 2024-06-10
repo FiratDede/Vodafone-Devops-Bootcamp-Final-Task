@@ -11,10 +11,4 @@ COPY . .
 
 RUN npm run test
 
-# FROM base as prod
-
 CMD [ "node", "app.js" ]
-
-# FROM base as test
-
-# RUN npm run test
